@@ -35,6 +35,7 @@ app.post('/login',function(req,res){
   console.log("Value returned by ValidateEmail is: ",ValidatorField.validateEmail(req.body.email));
     console.log("Value returned by ValidatePassword is: ",ValidatorField.validatePassword(req.body.password));
   if(ValidatorField.validateEmail(req.body.email)  && ValidatorField.validatePassword(req.body.password)){
+    console.log(req.body);
 LoginCredentials.find({email:req.body.email,password:req.body.password},function(err,credentials){
   if(err){
     console.log(err);
